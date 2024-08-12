@@ -14,7 +14,7 @@
 #include <time.h>
 #include <unistd.h>
 #include <sqlite3.h>
-#include <esp_spi_flash.h>
+//#include <esp_spi_flash.h>
 #include <esp_system.h>
 #include <rom/ets_sys.h>
 #include <sys/stat.h>
@@ -578,7 +578,7 @@ int esp32_SectorSize(sqlite3_file *id)
 	esp32_file *file = (esp32_file*) id;
 
 	dbg_printf("esp32_SectorSize:\n");
-	return SPI_FLASH_SEC_SIZE;
+	return 4096;//SPI_FLASH_SEC_SIZE;
 }
 
 int esp32_DeviceCharacteristics(sqlite3_file *id)
